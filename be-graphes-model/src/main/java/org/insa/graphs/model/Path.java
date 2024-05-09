@@ -2,6 +2,7 @@ package org.insa.graphs.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -214,7 +215,14 @@ public class Path {
      */
     public float getLength() {
         // TODO:
-        return 0;
+        Iterator<Arc> i = arcs.iterator();
+        float stock_val = 0.0F;
+
+        while(i.hasNext()){
+            stock_val = stock_val + i.next().getLength();
+        }
+        return stock_val;
+
     }
 
     /**
