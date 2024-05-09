@@ -249,12 +249,11 @@ public class Path {
      *
      */
     public float getLength() {
-        // TODO:
         Iterator<Arc> i = arcs.iterator();
         float stock_val = 0.0F;
 
         while(i.hasNext()){
-            stock_val = stock_val + i.next().getLength();
+            stock_val += i.next().getLength();
         }
         return stock_val;
 
@@ -283,8 +282,13 @@ public class Path {
      * @deprecated Need to be implemented.
      */
     public double getMinimumTravelTime() {
-        // TODO:
-        return 0;
+        Iterator<Arc> i = arcs.iterator();
+        double stock_val = 0.0F;
+
+        while(i.hasNext()){
+            stock_val += i.next().getMinimumTravelTime();
+        }
+        return stock_val;
     }
 
 }
